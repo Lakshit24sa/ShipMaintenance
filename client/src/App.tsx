@@ -25,20 +25,54 @@ function Router() {
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
+      
+      {/* Dashboard route */}
       <Route path="/">
         <AppLayout>
-          <Switch>
-            <Route path="/" component={DashboardPage} />
-            <Route path="/ships" component={ShipsPage} />
-            <Route path="/ships/:id" component={ShipDetailPage} />
-            <Route path="/components" component={ComponentsPage} />
-            <Route path="/jobs" component={JobsPage} />
-            <Route path="/calendar" component={CalendarPage} />
-            <Route component={NotFound} />
-          </Switch>
+          <DashboardPage />
         </AppLayout>
       </Route>
-      <Route component={NotFound} />
+      
+      {/* Ships routes */}
+      <Route path="/ships/:id">
+        {(params) => (
+          <AppLayout>
+            <ShipDetailPage id={params.id} />
+          </AppLayout>
+        )}
+      </Route>
+      
+      <Route path="/ships">
+        <AppLayout>
+          <ShipsPage />
+        </AppLayout>
+      </Route>
+      
+      {/* Components route */}
+      <Route path="/components">
+        <AppLayout>
+          <ComponentsPage />
+        </AppLayout>
+      </Route>
+      
+      {/* Jobs route */}
+      <Route path="/jobs">
+        <AppLayout>
+          <JobsPage />
+        </AppLayout>
+      </Route>
+      
+      {/* Calendar route */}
+      <Route path="/calendar">
+        <AppLayout>
+          <CalendarPage />
+        </AppLayout>
+      </Route>
+      
+      {/* 404 route */}
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }

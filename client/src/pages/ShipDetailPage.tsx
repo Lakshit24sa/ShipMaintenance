@@ -9,17 +9,22 @@ import ShipForm from '../components/Ships/ShipForm';
 import { Ship } from '../types';
 import { Helmet } from 'react-helmet';
 
-const ShipDetailPage: React.FC = () => {
+interface ShipDetailPageProps {
+  id?: string;
+}
+
+const ShipDetailPage: React.FC<ShipDetailPageProps> = ({ id: propId }) => {
   const [, params] = useRoute('/ships/:id');
   const [location, setLocation] = useLocation();
+  const id = propId || params?.id;
   const { ships, getShip, editShip } = useShips();
   const { components, getComponentsForShip } = useComponents();
   const { jobs, getJobsForShip } = useJobs();
   const { toast } = useToast();
   
   const [ship, setShip] = useState<Ship | undefined>(undefined);
-  const [shipComponents, setShipComponents] = useState([]);
-  const [shipJobs, setShipJobs] = useState([]);
+  const [shipComponents, setShipComponents] = useState<ShipComponent[]>([]);
+  const [shipJobs, setShipJobs] = useState<Job[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -27,7 +32,7 @@ const ShipDetailPage: React.FC = () => {
   
   useEffect(() => {
     const loadShipData = () => {
-      if (!params?.id) {
+      if (!id) {
         setError('Ship ID not provided');
         setLoading(false);
         return;
@@ -39,7 +44,7 @@ const ShipDetailPage: React.FC = () => {
         setIsEditing(searchParams.get('edit') === 'true');
         
         // Load ship data
-        const shipData = getShip(params.id);
+        const shipData = getShip(id);
         if (!shipData) {
           setError('Ship not found');
           setLoading(false);
@@ -49,11 +54,11 @@ const ShipDetailPage: React.FC = () => {
         setShip(shipData);
         
         // Load related components
-        const relatedComponents = getComponentsForShip(params.id);
+        const relatedComponents = getComponentsForShip(id);
         setShipComponents(relatedComponents);
         
         // Load related jobs
-        const relatedJobs = getJobsForShip(params.id);
+        const relatedJobs = getJobsForShip(id);
         setShipJobs(relatedJobs);
         
         setError(null);
@@ -66,7 +71,7 @@ const ShipDetailPage: React.FC = () => {
     };
     
     loadShipData();
-  }, [params, getShip, getComponentsForShip, getJobsForShip, ships, components, jobs]);
+  }, [id, getShip, getComponentsForShip, getJobsForShip, ships, components, jobs]);
   
   const handleUpdateShip = (data: Ship) => {
     setIsSubmitting(true);
@@ -84,7 +89,7 @@ const ShipDetailPage: React.FC = () => {
       setIsEditing(false);
       
       // Update URL to remove edit parameter
-      setLocation(`/ships/${params?.id}`);
+      setLocation(`/ships/${id}`);
     } catch (error) {
       toast({
         title: "Error",
