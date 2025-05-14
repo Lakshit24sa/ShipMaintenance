@@ -12,9 +12,9 @@ const CURRENT_USER_KEY = 'entnt_current_user';
 export function initializeLocalStorage() {
   if (!localStorage.getItem(USERS_KEY)) {
     const defaultUsers: User[] = [
-      { id: '1', name: 'Admin User', email: 'admin@entnt.in', password: 'admin123', role: 'Admin' },
-      { id: '2', name: 'Inspector User', email: 'inspector@entnt.in', password: 'inspect123', role: 'Inspector' },
-      { id: '3', name: 'Engineer User', email: 'engineer@entnt.in', password: 'engine123', role: 'Engineer' }
+      { id: '1', name: 'Admin', email: 'admin@entnt.in', password: 'admin123', role: 'Admin' },
+      { id: '2', name: 'Inspector', email: 'inspector@entnt.in', password: 'inspect123', role: 'Inspector' },
+      { id: '3', name: 'Engineer', email: 'engineer@entnt.in', password: 'engine123', role: 'Engineer' }
     ];
     setUsers(defaultUsers);
   }
@@ -60,6 +60,7 @@ export function initializeLocalStorage() {
         status: 'Open', 
         assignedEngineerId: '3', 
         scheduledDate: '2025-05-05',
+        description: 'Regular inspection of main engine components',
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       }
