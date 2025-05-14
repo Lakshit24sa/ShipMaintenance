@@ -1,0 +1,43 @@
+Core Features
+User Authentication (Simulated)
+• Hardcoded users with roles: Admin, Inspector, Engineer.
+• Login functionality (email/password).
+• Session persistence with localStorage.
+• Role-based access control enforced on the frontend.
+Ships Management
+• List Ships (fields: Name, IMO Number, Flag, Status).
+• Create, Edit, and Delete Ships.
+• View a detailed Ship Profile page including General Information, Maintenance History,
+Components installed.
+Ship Components Management
+• Add, Edit, and Delete Components linked to Ships.
+• View Component Details: Name, Serial Number, Installation Date, Last Maintenance
+Date.
+Maintenance Jobs Management
+• Create Maintenance Jobs for Components: Job Type, Priority, Status, Assigned Engineer.
+• View and Filter Jobs by Ship, Status, and Priority.
+• Update Job status as it progresses.
+Maintenance Calendar
+• Display scheduled jobs on a Calendar view (Monthly, Weekly).
+
+• Clicking a date should show jobs scheduled on that day.
+Notification Center
+• In-app notification system for: Job Created, Job Updated, Job Completed.
+• Notifications must be dismissible.
+KPIs Dashboard
+• Dashboard page showing: Total Ships, Components with Overdue Maintenance, Jobs in
+Progress and Completed.
+• Use cards and basic charts for visual representation.
+Data Persistence
+• All user data (ships, components, jobs, users, sessions) must persist using localStorage.
+Responsive Design
+• The application must be fully responsive across mobile, tablet, and desktop devices.
+Application Requirements
+• Built entirely with React (functional components).
+• Navigation handled using React Router.
+• Global State Management using Context API or Redux.
+• Professional and consistent styling using either TailwindCSS, Material UI, or custom CSS.
+• Form validation and user feedback for all forms.
+• Clean folder and component organization.
+• Proper error handling and loading states where appropriate.
+• Meaningful Git commit messages and history.
