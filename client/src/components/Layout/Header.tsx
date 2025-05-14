@@ -3,7 +3,7 @@ import { MenuIcon, BellIcon, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNotifications } from '../../contexts/NotificationsContext';
 import NotificationCenter from '../Notifications/NotificationCenter';
-import { useTheme } from '@/lib/theme';
+import { useTheme } from '@/components/ui/theme-provider';
 
 interface HeaderProps {
   currentPage: string;
