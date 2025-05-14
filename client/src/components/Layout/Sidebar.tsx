@@ -46,84 +46,79 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
         
         <div className="flex flex-col flex-grow overflow-y-auto">
           <nav className="flex-1 px-2 py-4 space-y-1">
-            <Link href="/">
-              <a 
-                className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
-                  currentPage === 'dashboard' 
-                    ? 'bg-primary-800 text-white' 
-                    : 'text-primary-100 hover:bg-primary-800'
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <LayoutDashboardIcon className={`mr-3 h-5 w-5 ${
-                  currentPage === 'dashboard' ? 'text-white' : 'text-primary-300'
-                }`} />
-                Dashboard
-              </a>
+            <Link 
+              href="/"
+              onClick={() => setSidebarOpen(false)}
+              className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                currentPage === 'dashboard' 
+                  ? 'bg-primary-800 text-white' 
+                  : 'text-primary-100 hover:bg-primary-800'
+              }`}
+            >
+              <LayoutDashboardIcon className={`mr-3 h-5 w-5 ${
+                currentPage === 'dashboard' ? 'text-white' : 'text-primary-300'
+              }`} />
+              Dashboard
             </Link>
             
-            <Link href="/ships">
-              <a 
-                className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
-                  currentPage === 'ships' 
-                    ? 'bg-primary-800 text-white' 
-                    : 'text-primary-100 hover:bg-primary-800'
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <ShipIcon className={`mr-3 h-5 w-5 ${
-                  currentPage === 'ships' ? 'text-white' : 'text-primary-300'
-                }`} />
-                Ships
-              </a>
+            <Link 
+              href="/ships"
+              onClick={() => setSidebarOpen(false)}
+              className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                currentPage === 'ships' 
+                  ? 'bg-primary-800 text-white' 
+                  : 'text-primary-100 hover:bg-primary-800'
+              }`}
+            >
+              <ShipIcon className={`mr-3 h-5 w-5 ${
+                currentPage === 'ships' ? 'text-white' : 'text-primary-300'
+              }`} />
+              Ships
             </Link>
             
-            <Link href="/components">
-              <a 
-                className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
-                  currentPage === 'components' 
-                    ? 'bg-primary-800 text-white' 
-                    : 'text-primary-100 hover:bg-primary-800'
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <Drill className={`mr-3 h-5 w-5 ${
-                  currentPage === 'components' ? 'text-white' : 'text-primary-300'
-                }`} />
-                Components
-              </a>
+            <Link 
+              href="/components"
+              onClick={() => setSidebarOpen(false)}
+              className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                currentPage === 'components' 
+                  ? 'bg-primary-800 text-white' 
+                  : 'text-primary-100 hover:bg-primary-800'
+              }`}
+            >
+              <Drill className={`mr-3 h-5 w-5 ${
+                currentPage === 'components' ? 'text-white' : 'text-primary-300'
+              }`} />
+              Components
             </Link>
             
-            <Link href="/jobs">
-              <a 
-                className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
-                  currentPage === 'jobs' 
-                    ? 'bg-primary-800 text-white' 
-                    : 'text-primary-100 hover:bg-primary-800'
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <WrenchIcon className={`mr-3 h-5 w-5 ${
-                  currentPage === 'jobs' ? 'text-white' : 'text-primary-300'
-                }`} />
-                Maintenance Jobs
-              </a>
+            <Link 
+              href="/jobs"
+              onClick={() => setSidebarOpen(false)}
+              className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                currentPage === 'jobs' 
+                  ? 'bg-primary-800 text-white' 
+                  : 'text-primary-100 hover:bg-primary-800'
+              }`}
+            >
+              <WrenchIcon className={`mr-3 h-5 w-5 ${
+                currentPage === 'jobs' ? 'text-white' : 'text-primary-300'
+              }`} />
+              Maintenance Jobs
             </Link>
             
-            <Link href="/calendar">
-              <a 
-                className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
-                  currentPage === 'calendar' 
-                    ? 'bg-primary-800 text-white' 
-                    : 'text-primary-100 hover:bg-primary-800'
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <CalendarIcon className={`mr-3 h-5 w-5 ${
-                  currentPage === 'calendar' ? 'text-white' : 'text-primary-300'
-                }`} />
-                Calendar
-              </a>
+            <Link 
+              href="/calendar"
+              onClick={() => setSidebarOpen(false)}
+              className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                currentPage === 'calendar' 
+                  ? 'bg-primary-800 text-white' 
+                  : 'text-primary-100 hover:bg-primary-800'
+              }`}
+            >
+              <CalendarIcon className={`mr-3 h-5 w-5 ${
+                currentPage === 'calendar' ? 'text-white' : 'text-primary-300'
+              }`} />
+              Calendar
             </Link>
           </nav>
         </div>
