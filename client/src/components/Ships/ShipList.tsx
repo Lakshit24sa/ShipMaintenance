@@ -26,8 +26,8 @@ interface ShipListProps {
 
 const ShipList: React.FC<ShipListProps> = ({ ships, onDelete, isLoading }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
-  const [flagFilter, setFlagFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all_statuses');
+  const [flagFilter, setFlagFilter] = useState('all_flags');
   const [deleteShipId, setDeleteShipId] = useState<string | null>(null);
   
   // Filter ships based on search term and filters
@@ -36,8 +36,8 @@ const ShipList: React.FC<ShipListProps> = ({ ships, onDelete, isLoading }) => {
       ship.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       ship.imo.toLowerCase().includes(searchTerm.toLowerCase());
       
-    const matchesStatus = statusFilter ? ship.status === statusFilter : true;
-    const matchesFlag = flagFilter ? ship.flag === flagFilter : true;
+    const matchesStatus = statusFilter && statusFilter !== 'all_statuses' ? ship.status === statusFilter : true;
+    const matchesFlag = flagFilter && flagFilter !== 'all_flags' ? ship.flag === flagFilter : true;
     
     return matchesSearch && matchesStatus && matchesFlag;
   });

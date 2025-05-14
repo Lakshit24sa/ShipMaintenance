@@ -6,7 +6,7 @@ import { useJobs } from '../contexts/JobsContext';
 import { useToast } from '@/hooks/use-toast';
 import ShipDetail from '../components/Ships/ShipDetail';
 import ShipForm from '../components/Ships/ShipForm';
-import { Ship } from '../types';
+import { Ship, ShipComponent, Job } from '../types';
 import { Helmet } from 'react-helmet';
 
 interface ShipDetailPageProps {
@@ -82,7 +82,7 @@ const ShipDetailPage: React.FC<ShipDetailPageProps> = ({ id: propId }) => {
       toast({
         title: "Ship Updated",
         description: "The ship details have been successfully updated.",
-        variant: "success",
+        variant: "default",
       });
       
       setShip(data);

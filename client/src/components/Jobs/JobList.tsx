@@ -91,7 +91,7 @@ const JobList: React.FC<JobListProps> = ({
             <div>
               <Select 
                 value={statusFilter} 
-                onValueChange={(value) => setStatusFilter(value as JobStatus | '')}
+                onValueChange={(value) => setStatusFilter(value as JobStatus | 'all_statuses')}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="All Statuses" />
@@ -109,7 +109,7 @@ const JobList: React.FC<JobListProps> = ({
             <div>
               <Select 
                 value={priorityFilter} 
-                onValueChange={(value) => setPriorityFilter(value as JobPriority | '')}
+                onValueChange={(value) => setPriorityFilter(value as JobPriority | 'all_priorities')}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="All Priorities" />
