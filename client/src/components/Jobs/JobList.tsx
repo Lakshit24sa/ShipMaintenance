@@ -26,9 +26,9 @@ const JobList: React.FC<JobListProps> = ({
   componentMap 
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [shipFilter, setShipFilter] = useState('');
-  const [statusFilter, setStatusFilter] = useState<JobStatus | ''>('');
-  const [priorityFilter, setPriorityFilter] = useState<JobPriority | ''>('');
+  const [shipFilter, setShipFilter] = useState('all_ships');
+  const [statusFilter, setStatusFilter] = useState<JobStatus | 'all_statuses'>('all_statuses');
+  const [priorityFilter, setPriorityFilter] = useState<JobPriority | 'all_priorities'>('all_priorities');
   
   // Filter jobs based on search term and filters
   const filteredJobs = jobs.filter(job => {
@@ -42,9 +42,9 @@ const JobList: React.FC<JobListProps> = ({
       shipName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       engineerName.toLowerCase().includes(searchTerm.toLowerCase());
       
-    const matchesShip = shipFilter ? job.shipId === shipFilter : true;
-    const matchesStatus = statusFilter ? job.status === statusFilter : true;
-    const matchesPriority = priorityFilter ? job.priority === priorityFilter : true;
+    const matchesShip = shipFilter && shipFilter !== 'all_ships' ? job.shipId === shipFilter : true;
+    const matchesStatus = statusFilter && statusFilter !== 'all_statuses' ? job.status === statusFilter : true;
+    const matchesPriority = priorityFilter && priorityFilter !== 'all_priorities' ? job.priority === priorityFilter : true;
     
     return matchesSearch && matchesShip && matchesStatus && matchesPriority;
   });
@@ -80,7 +80,7 @@ const JobList: React.FC<JobListProps> = ({
                   <SelectValue placeholder="All Ships" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Ships</SelectItem>
+                  <SelectItem value="all_ships">All Ships</SelectItem>
                   {shipOptions.map(ship => (
                     <SelectItem key={ship.id} value={ship.id}>{ship.name}</SelectItem>
                   ))}
@@ -97,7 +97,7 @@ const JobList: React.FC<JobListProps> = ({
                   <SelectValue placeholder="All Statuses" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Statuses</SelectItem>
+                  <SelectItem value="all_statuses">All Statuses</SelectItem>
                   <SelectItem value="Open">Open</SelectItem>
                   <SelectItem value="In Progress">In Progress</SelectItem>
                   <SelectItem value="Completed">Completed</SelectItem>
@@ -115,7 +115,7 @@ const JobList: React.FC<JobListProps> = ({
                   <SelectValue placeholder="All Priorities" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Priorities</SelectItem>
+                  <SelectItem value="all_priorities">All Priorities</SelectItem>
                   <SelectItem value="High">High</SelectItem>
                   <SelectItem value="Medium">Medium</SelectItem>
                   <SelectItem value="Low">Low</SelectItem>

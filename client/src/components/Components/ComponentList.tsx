@@ -34,8 +34,8 @@ const ComponentList: React.FC<ComponentListProps> = ({
   shipOptions
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [shipFilter, setShipFilter] = useState('');
-  const [maintenanceFilter, setMaintenanceFilter] = useState('');
+  const [shipFilter, setShipFilter] = useState('all_ships');
+  const [maintenanceFilter, setMaintenanceFilter] = useState('all_statuses');
   const [deleteComponentId, setDeleteComponentId] = useState<string | null>(null);
   
   // Filter components based on search term and filters
@@ -44,10 +44,10 @@ const ComponentList: React.FC<ComponentListProps> = ({
       component.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       component.serialNumber.toLowerCase().includes(searchTerm.toLowerCase());
       
-    const matchesShip = shipFilter ? component.shipId === shipFilter : true;
+    const matchesShip = shipFilter && shipFilter !== "all_ships" ? component.shipId === shipFilter : true;
     
     const status = getMaintenanceStatus(component.lastMaintenanceDate);
-    const matchesMaintenance = maintenanceFilter ? status === maintenanceFilter : true;
+    const matchesMaintenance = maintenanceFilter && maintenanceFilter !== "all_statuses" ? status === maintenanceFilter : true;
     
     return matchesSearch && matchesShip && matchesMaintenance;
   });
@@ -100,7 +100,7 @@ const ComponentList: React.FC<ComponentListProps> = ({
                     <SelectValue placeholder="All Statuses" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Statuses</SelectItem>
+                    <SelectItem value="all_statuses">All Statuses</SelectItem>
                     <SelectItem value="Up to Date">Maintenance Up to Date</SelectItem>
                     <SelectItem value="Due Soon">Maintenance Due</SelectItem>
                     <SelectItem value="Overdue">Maintenance Overdue</SelectItem>

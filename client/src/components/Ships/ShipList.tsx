@@ -79,7 +79,7 @@ const ShipList: React.FC<ShipListProps> = ({ ships, onDelete, isLoading }) => {
                     <SelectValue placeholder="All Statuses" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Statuses</SelectItem>
+                    <SelectItem value="all_statuses">All Statuses</SelectItem>
                     <SelectItem value="Active">Active</SelectItem>
                     <SelectItem value="Under Maintenance">Under Maintenance</SelectItem>
                     <SelectItem value="Inactive">Inactive</SelectItem>
@@ -93,7 +93,7 @@ const ShipList: React.FC<ShipListProps> = ({ ships, onDelete, isLoading }) => {
                     <SelectValue placeholder="All Flags" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Flags</SelectItem>
+                    <SelectItem value="all_flags">All Flags</SelectItem>
                     {uniqueFlags.map(flag => (
                       <SelectItem key={flag} value={flag}>{flag}</SelectItem>
                     ))}
