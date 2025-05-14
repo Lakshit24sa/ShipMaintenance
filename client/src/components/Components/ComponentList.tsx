@@ -86,7 +86,7 @@ const ComponentList: React.FC<ComponentListProps> = ({
                     <SelectValue placeholder="All Ships" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Ships</SelectItem>
+                    <SelectItem value="all_ships">All Ships</SelectItem>
                     {shipOptions.map(ship => (
                       <SelectItem key={ship.id} value={ship.id}>{ship.name}</SelectItem>
                     ))}
