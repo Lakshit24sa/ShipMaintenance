@@ -11,6 +11,7 @@ import {
   formatDateForDisplay
 } from '../../utils/dateUtils';
 
+
 interface SelectedDayJob extends Job {
   componentName: string;
   shipName: string;

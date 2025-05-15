@@ -20,6 +20,7 @@ import {
 import { getMaintenanceStatus, formatDateForDisplay } from '../../utils/dateUtils';
 import { Badge } from '@/components/ui/badge';
 
+
 interface ComponentListProps {
   components: ShipComponent[];
   onDelete: (id: string) => void;

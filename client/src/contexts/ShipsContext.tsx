@@ -74,6 +74,7 @@ export const ShipsProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
+  
   const removeShip = (id: string): void => {
     try {
       deleteShip(id);

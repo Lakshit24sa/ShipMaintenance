@@ -5,6 +5,7 @@ import { useComponents } from '../contexts/ComponentsContext';
 import MaintenanceCalendar from '../components/Calendar/MaintenanceCalendar';
 import { Helmet } from 'react-helmet';
 
+
 const CalendarPage: React.FC = () => {
   const { jobs } = useJobs();
   const { ships } = useShips();

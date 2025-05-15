@@ -11,6 +11,7 @@ interface NotificationCenterProps {
   onClose: () => void;
 }
 
+
 const NotificationCenter: React.FC<NotificationCenterProps> = ({
   notifications,
   markAsRead,

@@ -39,6 +39,8 @@ const JobsPage: React.FC = () => {
     shipId: component.shipId
   }));
   
+
+  
   // Map component IDs to component names for display
   const componentMap = components.reduce((map, component) => {
     map[component.id] = component.name;

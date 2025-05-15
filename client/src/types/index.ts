@@ -9,6 +9,7 @@ export interface User {
   role: UserRole;
 }
 
+
 // Ship types
 export type ShipStatus = 'Active' | 'Under Maintenance' | 'Inactive';
 

@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
+
 const componentSchema = z.object({
   name: z.string().min(2, { message: 'Component name must be at least 2 characters' }),
   serialNumber: z.string().min(2, { message: 'Serial number is required' }),

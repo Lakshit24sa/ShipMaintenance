@@ -10,6 +10,8 @@ import Charts from '../components/Dashboard/Charts';
 import RecentActivity from '../components/Dashboard/RecentActivity';
 import { Helmet } from 'react-helmet';
 
+
+
 const DashboardPage: React.FC = () => {
   const { currentUser } = useAuth();
   const { ships } = useShips();

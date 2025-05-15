@@ -9,6 +9,7 @@ import {
   deleteComponent
 } from '../utils/localStorage';
 
+
 interface ComponentsContextType {
   components: ShipComponent[];
   loading: boolean;

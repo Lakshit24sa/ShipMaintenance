@@ -9,6 +9,7 @@ import {
   deleteNotification
 } from '../utils/localStorage';
 
+
 interface NotificationsContextType {
   notifications: Notification[];
   unreadCount: number;

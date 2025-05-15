@@ -9,6 +9,7 @@ interface AppLayoutProps {
   children: React.ReactNode;
 }
 
+
 const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);

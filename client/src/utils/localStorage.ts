@@ -378,3 +378,4 @@ export function setCurrentUser(user: User | null): void {
     localStorage.removeItem(CURRENT_USER_KEY);
   }
 }
+

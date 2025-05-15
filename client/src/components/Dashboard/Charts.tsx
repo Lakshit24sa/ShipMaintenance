@@ -14,6 +14,7 @@ interface ShipStatusData {
   color: string;
 }
 
+
 interface ChartsProps {
   maintenanceStatusData: MaintenanceStatusData[];
   shipStatusData: ShipStatusData[];

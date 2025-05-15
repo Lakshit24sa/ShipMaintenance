@@ -11,6 +11,7 @@ export interface ActivityItem {
   type: 'ship_added' | 'job_completed' | 'maintenance_due' | 'engineer_assigned';
 }
 
+
 interface RecentActivityProps {
   activities: ActivityItem[];
 }

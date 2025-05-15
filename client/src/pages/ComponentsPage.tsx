@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { PlusIcon } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
+
+
 const ComponentsPage: React.FC = () => {
   const { components, addComponent, editComponent, removeComponent, loading, error } = useComponents();
   const { ships } = useShips();

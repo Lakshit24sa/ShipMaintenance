@@ -123,6 +123,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
           </nav>
         </div>
         
+        
         <div className="p-4 border-t border-primary-800">
           <div className="flex items-center">
             <div className="flex-shrink-0">

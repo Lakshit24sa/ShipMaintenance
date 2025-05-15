@@ -28,6 +28,8 @@ interface JobDetailProps {
   isUpdating: boolean;
 }
 
+
+
 const JobDetail: React.FC<JobDetailProps> = ({
   job,
   shipName,

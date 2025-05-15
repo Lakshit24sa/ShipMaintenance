@@ -12,6 +12,7 @@ interface MobileNavigationProps {
   currentPage: string;
 }
 
+
 const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentPage }) => {
   return (
     <div className="sm:hidden bg-white border-t border-gray-200 fixed bottom-0 left-0 right-0 z-10 dark:bg-gray-800 dark:border-gray-700">

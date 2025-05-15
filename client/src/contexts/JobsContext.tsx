@@ -66,6 +66,7 @@ export const JobsProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return getJobsByEngineer(engineerId);
   };
 
+  
   const addJob = (jobData: Omit<Job, 'id' | 'createdAt' | 'updatedAt'>): Job => {
     try {
       const newJob = createJob(jobData);
