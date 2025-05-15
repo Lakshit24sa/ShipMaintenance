@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { formatDateForDisplay } from '../../utils/dateUtils';
 
+
 interface JobListProps {
   jobs: Job[];
   isLoading: boolean;
@@ -204,29 +205,29 @@ const JobList: React.FC<JobListProps> = ({
                       <TableCell className="text-sm text-gray-500 dark:text-gray-400">
                         {formatDateForDisplay(job.scheduledDate)}
                       </TableCell>
-                      <TableCell className="text-right space-x-2">
-                        <Link href={`/jobs/${job.id}`}>
-                          <Button variant="ghost" size="sm" className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300">
-                            <EyeIcon className="h-4 w-4 mr-1" />
-                            View
-                          </Button>
-                        </Link>
-                        {job.status !== 'Completed' && job.status !== 'Cancelled' && (
-                          <Link href={`/jobs/${job.id}?edit=true`}>
-                            <Button variant="ghost" size="sm" className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300">
-                              <PencilIcon className="h-4 w-4 mr-1" />
-                              Update Status
-                            </Button>
-                          </Link>
-                        )}
-                      </TableCell>
+                      <TableCell className="text-right">
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => {
+                          const confirmDelete = window.confirm("Are you sure you want to delete this job?");
+                          if (confirmDelete) {
+                            const updatedJobs = jobs.filter(j => j.id !== job.id);
+                            localStorage.setItem('jobs', JSON.stringify(updatedJobs));
+                            window.location.reload(); // ideally, replace with state update
+                          }
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    </TableCell>
                     </TableRow>
                   );
                 })
               ) : (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center py-10 text-gray-500 dark:text-gray-400">
-                    No jobs found matching your criteria.
+                  <TableCell colSpan={8} className="text-center py-10">
+                    No jobs found.
                   </TableCell>
                 </TableRow>
               )}
@@ -237,5 +238,4 @@ const JobList: React.FC<JobListProps> = ({
     </>
   );
 };
-
 export default JobList;

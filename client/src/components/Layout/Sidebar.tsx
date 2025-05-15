@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
       {/* Sidebar */}
       <div className="flex flex-col flex-grow bg-primary-900 w-64 md:relative z-10">
         <div className="flex items-center justify-between h-16 px-4 border-b border-primary-800">
-          <h1 className="text-lg font-bold text-white">ENTNT</h1>
+          <h1 className="text-lg font-bold text to-blue-600">ENTNT</h1>
           <button 
             onClick={() => setSidebarOpen(false)} 
             className="md:hidden text-white"
@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
               onClick={() => setSidebarOpen(false)}
               className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                 currentPage === 'dashboard' 
-                  ? 'bg-primary-800 text-white' 
+                  ? 'bg-blue-800 text-white' 
                   : 'text-primary-100 hover:bg-primary-800'
               }`}
             >
@@ -66,7 +66,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
               onClick={() => setSidebarOpen(false)}
               className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                 currentPage === 'ships' 
-                  ? 'bg-primary-800 text-white' 
+                  ? 'bg-blue-800 text-white' 
                   : 'text-primary-100 hover:bg-primary-800'
               }`}
             >
@@ -81,7 +81,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
               onClick={() => setSidebarOpen(false)}
               className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                 currentPage === 'components' 
-                  ? 'bg-primary-800 text-white' 
+                  ? 'bg-blue-800 text-white' 
                   : 'text-primary-100 hover:bg-primary-800'
               }`}
             >
@@ -96,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
               onClick={() => setSidebarOpen(false)}
               className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                 currentPage === 'jobs' 
-                  ? 'bg-primary-800 text-white' 
+                  ? 'bg-blue-800 text-white' 
                   : 'text-primary-100 hover:bg-primary-800'
               }`}
             >
@@ -111,7 +111,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
               onClick={() => setSidebarOpen(false)}
               className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                 currentPage === 'calendar' 
-                  ? 'bg-primary-800 text-white' 
+                  ? 'bg-blue-800 text-white' 
                   : 'text-primary-100 hover:bg-primary-800'
               }`}
             >
@@ -138,7 +138,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen, currentP
           <div className="mt-3">
             <button 
               onClick={logout}
-              className="w-full flex items-center justify-center px-4 py-2 text-sm text-white bg-primary-800 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              className="w-full flex items-center justify-center px-4 py-2 text-sm bg-red-600 hover:bg-red-700 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
               <LogOutIcon className="mr-2 h-4 w-4" />
               Sign out

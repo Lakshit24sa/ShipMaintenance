@@ -132,7 +132,7 @@ const ComponentsPage: React.FC = () => {
               setPreSelectedShipId(undefined);
               setShowForm(true);
             }}
-            className="mt-4 sm:mt-0 bg-primary-600 hover:bg-primary-700"
+            className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white"
           >
             <PlusIcon className="h-4 w-4 mr-2" /> Add New Component
           </Button>

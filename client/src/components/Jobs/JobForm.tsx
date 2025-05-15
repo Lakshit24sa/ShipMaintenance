@@ -301,7 +301,7 @@ const JobForm: React.FC<JobFormProps> = ({
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-primary-600 hover:bg-primary-700"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {isLoading ? 'Saving...' : job ? 'Update Job' : 'Create Job'}
               </Button>

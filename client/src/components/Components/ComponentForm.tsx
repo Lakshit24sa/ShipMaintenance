@@ -146,7 +146,7 @@ const ComponentForm: React.FC<ComponentFormProps> = ({
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-primary-600 hover:bg-primary-700"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {isLoading ? 'Saving...' : component ? 'Update Component' : 'Add Component'}
               </Button>

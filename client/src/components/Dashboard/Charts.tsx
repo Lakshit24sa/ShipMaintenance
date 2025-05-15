@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BarChart, Bar, PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis,PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
 interface MaintenanceStatusData {
   name: string;
@@ -24,32 +24,28 @@ const MaintenanceStatusChart: React.FC<{ data: MaintenanceStatusData[] }> = ({ d
     <Card className="bg-white dark:bg-gray-800">
       <CardHeader>
         <CardTitle className="text-base font-medium text-gray-700 dark:text-gray-300">
-          Maintenance Status
+          Maintenance Jobs by Status
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
-              width={500}
-              height={300}
               data={data}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
+              margin={{ top: 20, right: 30, left: 20, bottom: 30 }}
             >
-              <Tooltip 
-                contentStyle={{ 
+              <XAxis dataKey="name" stroke="#888888" />
+              <YAxis allowDecimals={false} stroke="#888888" />
+              <Tooltip
+                contentStyle={{
                   backgroundColor: 'rgba(255, 255, 255, 0.9)',
                   borderRadius: '0.5rem',
                   border: 'none',
-                  boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+                  boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
                 }}
               />
-              <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+              <Legend />
+              <Bar dataKey="value" name="Jobs Count" radius={[4, 4, 0, 0]}>
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}
