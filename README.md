@@ -2,8 +2,7 @@
 A comprehensive React-based application for managing ship maintenance operations. This dashboard enables maritime organizations to track ships, components, maintenance schedules, and repair jobs — with robust role-based access control.
 
 🔗Live Demo
-👉 Click here to view the deployed app
-(Replace this with your actual deployment link)
+👉 Click here to view the deployed app - https://shipmaintenancedashboard.vercel.app/
 
 ✨ Features
 🔐 Role-Based Authentication
