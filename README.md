@@ -25,6 +25,9 @@ A comprehensive React-based application for managing ship maintenance operations
 📱 Responsive Design
 - Works seamlessly on desktop, tablet, and mobile
 
+Special effects 
+- dark light theme toggle + notification feature.
+
 🔐 Demo Credentials
 Role	         Email	         Password
 Admin	     admin@entnt.in	     admin123
@@ -37,10 +40,8 @@ Node.js v16 + npm + Git
 
 📥 Installation Steps
 Clone the repository
-git clone https://github.com/yourusername/ship-maintenance-dashboard.git
-cd ship-maintenance-dashboard
-Install dependencies
-npm install
+- git clone https://github.com/lakshya24sa/ShipMaintenance.git 
+- Install dependencies : npm install
 Start the development server
 
 ✅ For Linux/Mac:
